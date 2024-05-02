@@ -1,0 +1,24 @@
+body {
+    background-image: url('./assets/sfondo1.jpg');
+    background-size: 100%;
+    background-position-y: 10%;
+    background-repeat: no-repeat;
+    font-family: 'Poppins';
+}
+
+#testo1 {
+    margin-top: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 500px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#text1 {
+    text-align: center;
+    font-size: 3vh;
+    position: relative;
+}
