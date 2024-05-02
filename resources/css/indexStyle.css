@@ -1,0 +1,19 @@
+.homepage {
+    background-image: url('background-image.jpg'); /* Inserisci il percorso dell'immagine di sfondo */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .homepage h1 {
+    font-size: 3rem;
+  }
+  
+  .homepage p {
+    font-size: 1.5rem;
+  }
