@@ -25,7 +25,7 @@ body {
 }
 
 #subtitle{
-    margin-top: 10vh;
+    margin-top: 5vh;
     margin-right: auto;
     text-align: end;
 }
@@ -56,3 +56,18 @@ body {
     border-radius: 40px;
 }
 
+#link {
+    font-style: normal;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+#logoDiv{
+    margin-top: 3vh;
+    text-align: end;
+}
+
+#logo{
+    max-width: 2%;
+    margin-right: 5vh;
+}
