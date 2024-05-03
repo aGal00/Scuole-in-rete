@@ -8,12 +8,19 @@ body {
     font-size: 1pt;
 }
 
-#scuole{
-    margin-left: 3vh;
+.scuole{
+    margin-left: 10vh;
     margin-right: 10vh;
     text-align: center;
-    margin-top: 15vh;
     font-size: 200%;
+}
+
+#top{
+    margin-top: 5vh;
+}
+
+#bottom{
+    margin-top: 8vh;
 }
 
 .image{
@@ -21,16 +28,18 @@ body {
 }
 
 #logoDiv{
-    margin-top: 1vh;
+    margin-top: 3vh;
+    text-align: end;
 }
 
 #logo{
-    max-width: 10%;
+    max-width: 2%;
+    margin-right: 5vh;
 }
 
 
 .scuola{
-    margin-top: 3vh;
+    margin-top: 1vh;
     color: black;
-}
+}   
 
