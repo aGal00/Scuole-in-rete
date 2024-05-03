@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 body {
     background-image: url('./assets/sfondo1.jpg');
     background-size: 100%;
@@ -7,14 +11,11 @@ body {
 }
 
 #testo1 {
-    margin-top: 40vh;
+    margin-top: 12vh;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid black;
-    border-radius: 15px;
-    width: 500px;
-    height: 70px;
-    background-color: rgba(255, 255, 255, 0.6);
+    color: white;
+    font-size: 30pt;
 }
 
 #text1 {
@@ -22,3 +23,36 @@ body {
     font-size: 3vh;
     position: relative;
 }
+
+#subtitle{
+    margin-top: 10vh;
+    margin-right: auto;
+    text-align: end;
+}
+
+#testo{
+    color: white;
+    font-size: 50pt;
+    position: relative;
+}
+
+#big {
+    font-size: 100pt;
+    color: white;
+}
+
+#quest {
+    font-family: "Roboto";    
+}
+
+.row {
+    text-align: center;
+}
+
+.btn{
+    margin-top: 30pt !important;
+    font-size: 200%;
+    padding: 2%;
+    border-radius: 40px;
+}
+
