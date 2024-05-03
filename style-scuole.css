@@ -9,7 +9,7 @@ body {
 }
 
 #scuole{
-    margin-left: 10vh;
+    margin-left: 3vh;
     margin-right: 10vh;
     text-align: center;
     margin-top: 15vh;
@@ -20,11 +20,17 @@ body {
     max-width: 60%;
 }
 
+#logoDiv{
+    margin-top: 1vh;
+}
 
+#logo{
+    max-width: 10%;
+}
 
 
 .scuola{
-    margin-top: 1vh;
+    margin-top: 3vh;
     color: black;
 }
 
