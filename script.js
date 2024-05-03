@@ -1,5 +1,5 @@
 function getBranches() {
-    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/branches')
+    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/branches?populate=*')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
@@ -11,7 +11,7 @@ function getBranches() {
 }
 
 function getBranch(id) {
-    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/branches/'+id)
+    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/branches/' + id + '?populate=*')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
@@ -23,7 +23,7 @@ function getBranch(id) {
 }
 
 function getInstitutes() {
-    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/institutes')
+    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/institutes?populate=*')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
@@ -35,7 +35,7 @@ function getInstitutes() {
 }
 
 function getInstitute(id) {
-    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/institutes/'+id)
+    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/institutes/' + id + '?populate=*')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
@@ -47,7 +47,7 @@ function getInstitute(id) {
 }
 
 function getOpenDays() {
-    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/open-days')
+    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/open-days?populate=*')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
@@ -59,7 +59,7 @@ function getOpenDays() {
 }
 
 function getOpenDay(id) {
-    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/open-days/'+id)
+    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/open-days/' + id + '?populate=*')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
@@ -71,7 +71,7 @@ function getOpenDay(id) {
 }
 
 function getPaths() {
-    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/paths')
+    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/paths?populate=*')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
@@ -83,7 +83,7 @@ function getPaths() {
 }
 
 function getPath(id) {
-    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/paths/'+id)
+    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/paths/' + id + '?populate=*')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
@@ -95,7 +95,7 @@ function getPath(id) {
 }
 
 function getSchools() {
-    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/schools')
+    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/schools?populate=*')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
@@ -107,7 +107,7 @@ function getSchools() {
 }
 
 function getSchool(id) {
-    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/schools/'+id)
+    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/schools/' + id + '?populate=*')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
@@ -120,7 +120,7 @@ function getSchool(id) {
 
 
 function getActivities() {
-    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/activities')
+    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/activities?populate=*')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
@@ -132,7 +132,7 @@ function getActivities() {
 }
 
 function getActivity(id) {
-    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/activities/'+id)
+    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/activities/' + id + '?populate=*')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
