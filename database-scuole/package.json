@@ -1,5 +1,5 @@
 {
-  "name": "scuole-rete",
+  "name": "database-scuole",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -25,7 +25,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "c293c68f-fd91-4db2-a909-07ff0c8fc41d"
+    "uuid": "7af3b061-b860-403d-a212-092bea0f8f11"
   },
   "engines": {
     "node": ">=18.0.0 <=20.x.x",

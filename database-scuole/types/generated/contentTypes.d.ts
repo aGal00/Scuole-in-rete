@@ -788,6 +788,263 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiActivityActivity extends Schema.CollectionType {
+  collectionName: 'activities';
+  info: {
+    singularName: 'activity';
+    pluralName: 'activities';
+    displayName: 'activity';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    schools: Attribute.Relation<
+      'api::activity.activity',
+      'manyToMany',
+      'api::school.school'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::activity.activity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::activity.activity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBranchBranch extends Schema.CollectionType {
+  collectionName: 'branches';
+  info: {
+    singularName: 'branch';
+    pluralName: 'branches';
+    displayName: 'Branch';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    City: Attribute.String;
+    Address: Attribute.String;
+    ZIPcode: Attribute.String;
+    Phone: Attribute.String;
+    school: Attribute.Relation<
+      'api::branch.branch',
+      'manyToOne',
+      'api::school.school'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::branch.branch',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::branch.branch',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiInstituteInstitute extends Schema.CollectionType {
+  collectionName: 'institutes';
+  info: {
+    singularName: 'institute';
+    pluralName: 'institutes';
+    displayName: 'Institute';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Description: Attribute.Blocks;
+    schools: Attribute.Relation<
+      'api::institute.institute',
+      'oneToMany',
+      'api::school.school'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::institute.institute',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::institute.institute',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOpenDayOpenDay extends Schema.CollectionType {
+  collectionName: 'open_days';
+  info: {
+    singularName: 'open-day';
+    pluralName: 'open-days';
+    displayName: 'OpenDay';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Date: Attribute.Date;
+    Description: Attribute.Blocks;
+    StartTime: Attribute.Time;
+    EndTime: Attribute.Time;
+    Note: Attribute.String;
+    school: Attribute.Relation<
+      'api::open-day.open-day',
+      'manyToOne',
+      'api::school.school'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::open-day.open-day',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::open-day.open-day',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPathPath extends Schema.CollectionType {
+  collectionName: 'paths';
+  info: {
+    singularName: 'path';
+    pluralName: 'paths';
+    displayName: 'Path';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Description: Attribute.Blocks;
+    Duration: Attribute.Integer &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    school: Attribute.Relation<
+      'api::path.path',
+      'manyToOne',
+      'api::school.school'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::path.path', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::path.path', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSchoolSchool extends Schema.CollectionType {
+  collectionName: 'schools';
+  info: {
+    singularName: 'school';
+    pluralName: 'schools';
+    displayName: 'School';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    City: Attribute.String;
+    Address: Attribute.String;
+    CAP: Attribute.String;
+    Province: Attribute.String;
+    Website: Attribute.String;
+    Video: Attribute.Media;
+    Phone: Attribute.String;
+    Fax: Attribute.String;
+    PEC: Attribute.String;
+    Logo: Attribute.Media;
+    Description: Attribute.Blocks;
+    institute: Attribute.Relation<
+      'api::school.school',
+      'manyToOne',
+      'api::institute.institute'
+    >;
+    open_days: Attribute.Relation<
+      'api::school.school',
+      'oneToMany',
+      'api::open-day.open-day'
+    >;
+    paths: Attribute.Relation<
+      'api::school.school',
+      'oneToMany',
+      'api::path.path'
+    >;
+    branches: Attribute.Relation<
+      'api::school.school',
+      'oneToMany',
+      'api::branch.branch'
+    >;
+    activities: Attribute.Relation<
+      'api::school.school',
+      'manyToMany',
+      'api::activity.activity'
+    >;
+    Email: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::school.school',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::school.school',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -806,6 +1063,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::activity.activity': ApiActivityActivity;
+      'api::branch.branch': ApiBranchBranch;
+      'api::institute.institute': ApiInstituteInstitute;
+      'api::open-day.open-day': ApiOpenDayOpenDay;
+      'api::path.path': ApiPathPath;
+      'api::school.school': ApiSchoolSchool;
     }
   }
 }

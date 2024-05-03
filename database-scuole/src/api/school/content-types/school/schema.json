@@ -1,0 +1,101 @@
+{
+  "kind": "collectionType",
+  "collectionName": "schools",
+  "info": {
+    "singularName": "school",
+    "pluralName": "schools",
+    "displayName": "School",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "City": {
+      "type": "string"
+    },
+    "Address": {
+      "type": "string"
+    },
+    "CAP": {
+      "type": "string"
+    },
+    "Province": {
+      "type": "string"
+    },
+    "Website": {
+      "type": "string"
+    },
+    "Video": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Phone": {
+      "type": "string"
+    },
+    "Fax": {
+      "type": "string"
+    },
+    "PEC": {
+      "type": "string"
+    },
+    "Logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "institute": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::institute.institute",
+      "inversedBy": "schools"
+    },
+    "open_days": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::open-day.open-day",
+      "mappedBy": "school"
+    },
+    "paths": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::path.path",
+      "mappedBy": "school"
+    },
+    "branches": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::branch.branch",
+      "mappedBy": "school"
+    },
+    "activities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::activity.activity",
+      "inversedBy": "schools"
+    },
+    "Email": {
+      "type": "string"
+    }
+  }
+}
