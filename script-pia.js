@@ -62,6 +62,15 @@ function start() {
             }
 
             divOpenDay=document.getElementById('OpenDay')
+            OpenDay=document.createElement('ul')
+            for (let i = 0; i < response.data.attributes.open_days.data.length; i++) {
+                el=document.createElement('li')
+                el.innerText=response.data.attributes.open_days.data[i].attributes.Date+", "+response.data.attributes.open_days.data[i].attributes.StartTime.substr(0,5);
+                divOpenDay.appendChild(el)
+            }
+
+            divContatti=document.getElementById('Contatti')
+            Contatti=document.createElement('ul')
             
         })
 }
