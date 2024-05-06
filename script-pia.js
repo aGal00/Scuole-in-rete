@@ -115,11 +115,14 @@ function start() {
                 segreteria.innerText="Mail della segreteria: "+response.data.attributes.SegreteriaMail
                 divContatti.appendChild(segreteria)
             }
-            if (response.data.attributes.Website) {
-                sito=document.createElement('li')
-                sito.innerText="Sito Web: "+response.data.attributes.WebSite
-                divContatti.appendChild(sito)
-            }
+            // if (response.data.attributes.Website) {
+            //     sito=document.createElement('li')
+            //     var testo=response.data.attributes.Website
+            //     let link =" <a href=testo>testo</a>"
+            //     sito.insertAdjacentHTML("beforeend", link)
+            //     divContatti.appendChild(sito)
+            // }
+
             
         })
 }
