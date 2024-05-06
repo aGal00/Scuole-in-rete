@@ -30,17 +30,6 @@
     "Website": {
       "type": "string"
     },
-    "Video": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "Phone": {
       "type": "string"
     },
@@ -95,6 +84,24 @@
       "inversedBy": "schools"
     },
     "Email": {
+      "type": "string"
+    },
+    "maps": {
+      "type": "string"
+    },
+    "mensaVicina": {
+      "type": "string"
+    },
+    "Convitto": {
+      "type": "string"
+    },
+    "DirigenteMail": {
+      "type": "string"
+    },
+    "SegreteriaMail": {
+      "type": "string"
+    },
+    "video": {
       "type": "string"
     }
   }

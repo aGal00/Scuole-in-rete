@@ -995,7 +995,6 @@ export interface ApiSchoolSchool extends Schema.CollectionType {
     CAP: Attribute.String;
     Province: Attribute.String;
     Website: Attribute.String;
-    Video: Attribute.Media;
     Phone: Attribute.String;
     Fax: Attribute.String;
     PEC: Attribute.String;
@@ -1027,6 +1026,12 @@ export interface ApiSchoolSchool extends Schema.CollectionType {
       'api::activity.activity'
     >;
     Email: Attribute.String;
+    maps: Attribute.String;
+    mensaVicina: Attribute.String;
+    Convitto: Attribute.String;
+    DirigenteMail: Attribute.String;
+    SegreteriaMail: Attribute.String;
+    video: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
