@@ -55,13 +55,74 @@ function start() {
 
             divIndirizzi=document.getElementById('Indirizzi')
             Indirizzi=document.createElement('ul')
-            for (let i = 0; i < response.data.attributes.paths.data.length; i++) {
-                indirizzo=document.createElement('li')
-                indirizzo.innerText= response.data.attributes.paths.data[i].attributes.Name
-                divIndirizzi.appendChild(indirizzo)
+            length=response.data.attributes.paths.data.length
+            if (length>0){
+                Ind=document.createElement('h2')
+                Ind.innerText="INDIRIZZI:"
+                divIndirizzi.appendChild(Ind)
+                for (let i = 0; i < length; i++) {
+                    indirizzo=document.createElement('li')
+                    indirizzo.innerText= response.data.attributes.paths.data[i].attributes.Name
+                    divIndirizzi.appendChild(indirizzo)
+                }
+                divIndirizzi.style.marginBottom= "2vh";
             }
+            
 
             divOpenDay=document.getElementById('OpenDay')
+            OD=document.createElement('h2')
+            OD.innerText="OPEN DAY:"
+            divOpenDay.appendChild(OD)
+            OpenDay=document.createElement('ul')
+            for (let i = 0; i < response.data.attributes.open_days.data.length; i++) {
+                el=document.createElement('li')
+                el.innerText=response.data.attributes.open_days.data[i].attributes.Date+", "+response.data.attributes.open_days.data[i].attributes.StartTime.substr(0,5);
+                divOpenDay.appendChild(el)
+            }
+
+            divContatti=document.getElementById('Contatti')
+            cont=document.createElement('h2')
+            cont.innerText="CONTATTI:"
+            divContatti.appendChild(cont)
+            Contatti=document.createElement('ul')
+            if (response.data.attributes.Phone) {
+                phone=document.createElement('li')
+                phone.innerText="Telefono: "+response.data.attributes.Phone
+                divContatti.appendChild(phone)
+            }
+            if (response.data.attributes.Fax) {
+                fax=document.createElement('li')
+                fax.innerText="Fax: "+response.data.attributes.Fax
+                divContatti.appendChild(fax)
+            }
+            if (response.data.attributes.PEC) {
+                pec=document.createElement('li')
+                pec.innerText="PEC: "+response.data.attributes.PEC
+                divContatti.appendChild(pec)
+            }
+            if (response.data.attributes.Email) {
+                email=document.createElement('li')
+                email.innerText="Email: "+response.data.attributes.Email
+                divContatti.appendChild(email)
+            }
+            if (response.data.attributes.DirigenteMail) {
+                dirigente=document.createElement('li')
+                dirigente.innerText="Mail del dirigente: "+response.data.attributes.DirigenteMail
+                divContatti.appendChild(dirigente)
+            }
+            if (response.data.attributes.SegreteriaMail) {
+                segreteria=document.createElement('li')
+                segreteria.innerText="Mail della segreteria: "+response.data.attributes.SegreteriaMail
+                divContatti.appendChild(segreteria)
+            }
+            // if (response.data.attributes.Website) {
+            //     sito=document.createElement('li')
+            //     var testo=response.data.attributes.Website
+            //     let link =" <a href=testo>testo</a>"
+            //     sito.insertAdjacentHTML("beforeend", link)
+            //     divContatti.appendChild(sito)
+            // }
+
             
         })
 }
