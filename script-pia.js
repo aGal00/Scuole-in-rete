@@ -4,7 +4,7 @@ function start() {
     const id = urlParams.get('id');
     console.log("id:", id);
 
-    fetch('https://expert-tribble-x5555g695wx6f9jp-1337.app.github.dev/api/schools/' + id + '?populate=*')
+    fetch('https://redesigned-eureka-r46pgjq57w62x765-1337.app.github.dev/api/schools/' + id + '?populate=*')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
