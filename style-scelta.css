@@ -7,10 +7,8 @@ body {
 }
 
 #activities {
-    border: 1px solid green;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
 }
 
 #scuole {
@@ -29,5 +27,45 @@ body {
 }
 
 .text-activity{
-    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.text-div {
+    width: 100%;
+    align-content: center;
+}
+
+.image{
+    max-width: 60%;
+}
+
+.scuola{
+    margin-top: 1vh;
+    color: black;
+}   
+
+#scuole {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.listascuole {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titolo {
+    margin-top: 50px;
+    margin-bottom: 30px
+}
+
+.titolo-text {
+    font-size: 10vh;
 }

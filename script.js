@@ -129,13 +129,12 @@ function getActivity(id) {
         .then(response => response.json())
         .then(response => {
             if (response.data) {
-                console.log(response.data)
                 let maindiv = document.getElementById('scuole');
+                let titolo = createTitolo()
                 let table = createSchoolsList(response.data.attributes.schools.data)
-                if (maindiv.lastChild) {
-                    maindiv.removeChild(maindiv.lastChild)
-                }
-                maindiv.appendChild(table);
+                maindiv.innerHTML = ''
+                maindiv.appendChild(titolo)
+                maindiv.appendChild(table)
             } else {
                 console.log("no data")
             }
@@ -146,17 +145,19 @@ function createButtonsActivities(activities) {
     let mainbottoni = document.createElement('div');
     mainbottoni.classList.add('row')
     activities.forEach(activity => {
-        console.log(activity)
         let infos = activity.attributes;
         let div = document.createElement('div');
         div.classList.add('col-sm-2')
-        let andiv = document.createElement('div')
-        andiv.classList.add('activity');
+        let circle = document.createElement('div')
+        circle.classList.add('activity');
+        let textdiv = document.createElement('div')
+        textdiv.classList.add('text-div')
         let text = document.createElement('p')
         text.classList.add('text-activity')
         text.innerText = infos.name;
-        andiv.appendChild(text)
-        div.appendChild(andiv)
+        textdiv.appendChild(text)
+        circle.appendChild(textdiv)
+        div.appendChild(circle)
         div.onclick = function () {
             getActivity(activity.id)
         }
@@ -165,21 +166,77 @@ function createButtonsActivities(activities) {
     return mainbottoni;
 }
 
+/* <div class="col-sm-2">
+        <a href="./scuola.html?id=3">
+            <img class="img-fluid image" src="assets/loghi/logo rosmini.png" alt="">
+        </a>
+        <h4 class="scuola">LICEO ANTONIO ROSMINI</h4>
+</div> */
+
 function createSchoolsList(schools) {
-    let table = document.createElement('table');
+    let divmain = document.createElement('div');
+    divmain.classList.add('row')
+    divmain.classList.add('justify-content-sm-center')
+    divmain.classList.add('listascuole')
     schools.forEach(school => {
-        console.log(school)
+        let bigdiv = document.createElement('div')
+        bigdiv.classList.add('bigdiv')
+        bigdiv.classList.add('col-sm-2')
         let a = document.createElement('a')
         let link = './scuola.html?id=' + school.id
         a.setAttribute("href", link)
-        let div = document.createElement('div')
-        let p = document.createElement('div')
-        p.innerText = school.attributes.Name
-        div.appendChild(p)
-        a.appendChild(div)
-        table.appendChild(a);
+        let img = document.createElement('img')
+        img.classList.add('img-fluid')
+        img.classList.add('image')
+        switch (school.id) {
+            case 3:
+                img.src = 'assets/loghi/logo rosmini.png'
+                break;
+            case 4:
+                img.src = 'assets/loghi/logo filzi.png'
+                break;
+            case 5:
+                img.src = 'assets/loghi/logo depero.png'
+                break;
+            case 6:
+                img.src = 'assets/loghi/logo arcivescovile.png'
+                break;
+            case 7:
+                img.src = 'assets/loghi/logo steam.png'
+                break;
+            case 8:
+                img.src = 'assets/loghi/logo fontana.png'
+                break;
+            case 9:
+                img.src = 'assets/loghi/logo don milani.png'
+                break;
+            case 10:
+                img.src = 'assets/loghi/logo veronesi.png'
+                break;
+            case 11:
+                img.src = 'assets/loghi/marconi logo.png'
+                break;
+            case 12:
+                img.src = 'assets/loghi/logo barelli.png'
+                break;
+            case 13:
+                img.src = 'assets/loghi/alberghiero.png'
+                break;
+            case 14:
+                img.src = 'assets/loghi/logo upt.png'
+                break;
+            default:
+                break;
+        }
+        a.appendChild(img)
+        bigdiv.appendChild(a)
+        let schoolname = document.createElement('h4')
+        schoolname.classList.add('scuola')
+        schoolname.innerText = school.attributes.Name
+        bigdiv.appendChild(schoolname)
+        divmain.appendChild(bigdiv)
     });
-    return table;
+    return divmain;
 }
 
 
@@ -313,4 +370,14 @@ function createPageSchool(response) {
     //     sito.insertAdjacentHTML("beforeend", link)
     //     divContatti.appendChild(sito)
     // }
+}
+
+function createTitolo() {
+    let div = document.createElement('div')
+    div.classList.add('titolo')
+    let text = document.createElement('h1')
+    text.classList.add('titolo-text')
+    text.innerText = 'Risultati:'
+    div.appendChild(text)
+    return div
 }
