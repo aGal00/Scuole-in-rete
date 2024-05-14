@@ -144,16 +144,23 @@ function getActivity(id) {
 
 function createButtonsActivities(activities) {
     let mainbottoni = document.createElement('div');
+    mainbottoni.classList.add('row')
     activities.forEach(activity => {
         console.log(activity)
         let infos = activity.attributes;
-        let button = document.createElement('button');
-        button.classList.add('activity-button');
-        button.innerText = infos.name;
-        button.onclick = function () {
+        let div = document.createElement('div');
+        div.classList.add('col-sm-2')
+        let andiv = document.createElement('div')
+        andiv.classList.add('activity');
+        let text = document.createElement('p')
+        text.classList.add('text-activity')
+        text.innerText = infos.name;
+        andiv.appendChild(text)
+        div.appendChild(andiv)
+        div.onclick = function () {
             getActivity(activity.id)
         }
-        mainbottoni.appendChild(button);
+        mainbottoni.appendChild(div);
     });
     return mainbottoni;
 }
