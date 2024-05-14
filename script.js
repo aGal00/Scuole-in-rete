@@ -1,116 +1,7 @@
-function getBranches() {
-    fetch('https://redesigned-eureka-r46pgjq57w62x765-1337.app.github.dev/api/branches?populate=*')
-        .then(response => response.json())
-        .then(response => {
-            if (response.data) {
-                console.log(response.data)
-            } else {
-                console.log("no data")
-            }
-        })
-}
-
-function getBranch(id) {
-    fetch('https://redesigned-eureka-r46pgjq57w62x765-1337.app.github.dev/api/branches/' + id + '?populate=*')
-        .then(response => response.json())
-        .then(response => {
-            if (response.data) {
-                console.log(response.data)
-            } else {
-                console.log("no data")
-            }
-        })
-}
-
-function getInstitutes() {
-    fetch('https://redesigned-eureka-r46pgjq57w62x765-1337.app.github.dev/api/institutes?populate=*')
-        .then(response => response.json())
-        .then(response => {
-            if (response.data) {
-                console.log(response.data)
-            } else {
-                console.log("no data")
-            }
-        })
-}
-
-function getInstitute(id) {
-    fetch('https://redesigned-eureka-r46pgjq57w62x765-1337.app.github.dev/api/institutes/' + id + '?populate=*')
-        .then(response => response.json())
-        .then(response => {
-            if (response.data) {
-                console.log(response.data)
-            } else {
-                console.log("no data")
-            }
-        })
-}
-
-function getOpenDays() {
-    fetch('https://redesigned-eureka-r46pgjq57w62x765-1337.app.github.dev/api/open-days?populate=*')
-        .then(response => response.json())
-        .then(response => {
-            if (response.data) {
-                console.log(response.data)
-            } else {
-                console.log("no data")
-            }
-        })
-}
-
-function getOpenDay(id) {
-    fetch('https://redesigned-eureka-r46pgjq57w62x765-1337.app.github.dev/api/open-days/' + id + '?populate=*')
-        .then(response => response.json())
-        .then(response => {
-            if (response.data) {
-                console.log(response.data)
-            } else {
-                console.log("no data")
-            }
-        })
-}
-
-function getPaths() {
-    fetch('https://redesigned-eureka-r46pgjq57w62x765-1337.app.github.dev/api/paths?populate=*')
-        .then(response => response.json())
-        .then(response => {
-            if (response.data) {
-                console.log(response.data)
-            } else {
-                console.log("no data")
-            }
-        })
-}
-
-function getPath(id) {
-    fetch('https://redesigned-eureka-r46pgjq57w62x765-1337.app.github.dev/api/paths/' + id + '?populate=*')
-        .then(response => response.json())
-        .then(response => {
-            if (response.data) {
-                console.log(response.data)
-            } else {
-                console.log("no data")
-            }
-        })
-}
-
-function getSchools() {
-    fetch('https://redesigned-eureka-r46pgjq57w62x765-1337.app.github.dev/api/schools?populate=*')
-        .then(response => response.json())
-        .then(response => {
-            if (response.data) {
-                console.log(response.data)
-            } else {
-                console.log("no data")
-            }
-        })
-}
-
-
-
+var linkdatabase = 'https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev'
 
 function getActivities() {
-    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/activities')
+    fetch(linkdatabase + '/api/activities')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
@@ -125,7 +16,7 @@ function getActivities() {
 }
 
 function getActivity(id) {
-    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/activities/' + id + '?populate=*')
+    fetch(linkdatabase + '/api/activities/' + id + '?populate=*')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
@@ -165,13 +56,6 @@ function createButtonsActivities(activities) {
     });
     return mainbottoni;
 }
-
-/* <div class="col-sm-2">
-        <a href="./scuola.html?id=3">
-            <img class="img-fluid image" src="assets/loghi/logo rosmini.png" alt="">
-        </a>
-        <h4 class="scuola">LICEO ANTONIO ROSMINI</h4>
-</div> */
 
 function createSchoolsList(schools) {
     let divmain = document.createElement('div');
@@ -239,15 +123,12 @@ function createSchoolsList(schools) {
     return divmain;
 }
 
-
-
 function start() {
     const myKeyValues = window.location.search;
     const urlParams = new URLSearchParams(myKeyValues);
     const id = urlParams.get('id');
     console.log("id:", id);
-
-    fetch('https://vigilant-fortnight-9v7wp6pvwgwh7qg6-1337.app.github.dev/api/schools/' + id + '?populate=*')
+    fetch(linkdatabase + '/api/schools/' + id + '?populate=*')
         .then(response => response.json())
         .then(response => {
             if (response.data) {
@@ -315,7 +196,6 @@ function createPageSchool(response) {
         }
         divIndirizzi.style.marginBottom = "2vh";
     }
-
 
     divOpenDay = document.getElementById('OpenDay')
     OD = document.createElement('h2')
