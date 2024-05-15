@@ -16,7 +16,7 @@ L’intento era quello di creare un sito web semplice, che non infastidisse in a
 Abbiamo utilizzato javascript per la semplicità e l'efficacia del linguaggio, gestendo le richieste direttamente dal file di script.
 
 ## Immagine con la palette dei colori utilizzati:
-![palette](./assets/xreadme/palette.png)
+![Palette](./assets/xreadme/palette.png)
 
 ## Descrizione dei font utilizzati:
 Questo font, come il colore, è stato scelto per una chiarezza compositiva e per una facile comprensione del sito web. Inoltre l’assenza di grazie permette al lettore di percepire il sito web più semplice ed efficace nella navigabilità. 
@@ -27,17 +27,34 @@ Questo font, come il colore, è stato scelto per una chiarezza compositiva e per
 
 ## Screenshot delle pagine principali del progetto in esecuzione:
 
+![Home](./assets/xreadme/sitoindex.png)
+![Pagina scuole](./assets/xreadme/sitoscuole.png)
+![Pagina scuola](./assets/xreadme/sitoscuola.png)
+![Sezione attività](./assets/xreadme/sitoattivita.png)
+![Risultati](./assets/xreadme/sitorisultati.png)
+![Mappa](./assets/xreadme/sitomappa.png)
+![Video](./assets/xreadme/sitovideo.png)
 
 ## Elenco delle istruzioni da eseguire per mandare in esecuzione il progetto consegnato:
 
 1. scaricare il progetto
 2. aprire il progetto con l’editor desiderato
-3. entrare nella cartella database-scuole con la bash
-4. installare Node Package Manager con il comando ‘npm i’ 
-5. attivare il database con il comando ‘npm start’
-6. aprire il file index.html
+3. aprire la bash
+4. entrare nella cartella `database-scuole`:
+``` bash
+cd database-scuole
+```
+5. installare Node Package Manager:
+``` bash
+npm install
+```
+6. attivare il database: 
+``` bash
+npm start
+```
+7. aprire il file `index.html`
 
 **NB**: se le richieste vengono bloccate dal CORS, bisogna rendere pubblica la porta 1337, ovvero quella su cui è collegato il database.
  
-## URL del repository GitHub o GitLab creato per il progetto:
+## URL del repository GitHub creato per il progetto:
 [Link del repository](https://github.com/aGal00/Scuole-in-rete)
