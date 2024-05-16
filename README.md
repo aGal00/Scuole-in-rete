@@ -15,6 +15,8 @@ L’intento era quello di creare un sito web semplice, che non infastidisse in a
 ## Tecnologie utilizzate: spiegare il perché si sono scelti i framework/linguaggi utilizzati:
 Abbiamo utilizzato javascript per la semplicità e l'efficacia del linguaggio, gestendo le richieste direttamente dal file di script.
 
+Per il lato server abbiamo deciso di utilizzare Strapi, che grazie alla sua flessibilità, facilità d'uso e scalabilità abbiamo potuto modellare i dati in modo personalizzato per adattarli alle esigenze specifiche del nostro progetto. La sua interfaccia utente intuitiva rende la gestione dei contenuti molto più intuibile consentendo di aggiungere, modificare o eliminare dati con facilità.
+
 ## Immagine con la palette dei colori utilizzati:
 ![Palette](./assets/xreadme/palette.png)
 
